@@ -75,23 +75,23 @@ export const porQueElegirnos = [
 export const resenas = [
   {
     texto:
-      "El resultado fue impresionante. Dejaron el coche como nuevo después de un golpe bastante feo. El trato, perfecto desde el primer momento.",
-    autor: "Cliente verificado de Google",
+      "No hay nada que decir de ellos que no se haya dicho ya. Gente muy profesional, con trato muy cercano y honestos. Llevé mi coche debido a que le entraba agua por algún lugar del maletero y me lo solucionaron perfectamente. Los recomiendo totalmente.",
+    autor: "Pelayo",
   },
   {
     texto:
-      "Entregaron el vehículo exactamente en la fecha prometida y el acabado de pintura es indistinguible del original. Muy recomendable.",
-    autor: "Cliente verificado de Google",
+      "Me instalaron un difusor trasero aftermarket no original hace unas semanas y todo perfecto. Tanto el trato, como la atención y servicio por parte de Iván y su mujer. 100% recomendado.",
+    autor: "Rubén",
   },
   {
     texto:
-      "Me cambiaron el parabrisas rápidamente y gestionaron todo con el seguro sin problema. Atención muy profesional y cercana.",
-    autor: "Cliente verificado de Google",
+      "Rápido, bien de precio, son majísimos y lo más importante, el coche quedó como nuevo, vamos un artista.",
+    autor: "Ana",
   },
   {
     texto:
-      "Llevé el coche por unos arañazos en la carrocería y quedó como si saliera del concesionario. Precio ajustado y trabajo de primera.",
-    autor: "Cliente verificado de Google",
+      "Me presenté sin cita por un problema en la defensa delantera, salen a verlo y como era poca cosa me lo repararon sobre la marcha. Aunque tuvo que perder 15 minutos de su tiempo, no me quisieron cobrar. Eso difícilmente lo encuentras a día de hoy. Un sitio muy recomendable.",
+    autor: "Pesquin",
   },
 ];
 
