@@ -93,6 +93,17 @@ const {
     scroll-behavior: smooth;
   }
 
+  /* Compensa la altura del header sticky al pulsar en enlaces de anclaje */
+  [id] {
+    scroll-margin-top: 84px; /* Altura aproximada del header en móvil (~76px) + margen de seguridad */
+  }
+
+  @media (min-width: 768px) {
+    [id] {
+      scroll-margin-top: 102px; /* Altura del header en escritorio (~98px) + margen de seguridad */
+    }
+  }
+
   body {
     margin: 0;
     font-family: "Inter", sans-serif;
