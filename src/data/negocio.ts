@@ -22,25 +22,25 @@ export const servicios = [
   {
     titulo: "Restauración de chapa y pintura",
     descripcion:
-      "Reparamos golpes, abollones y arañazos con técnicas de última generación. Acabado idéntico al original de fábrica, color a color.",
+      "Golpes en la chapa, arañazos profundos, abolladuras que creías permanentes. Las reparamos y lo dejan como salido del concesionario. Color a color, sin diferencia visible.",
     icono: "car",
   },
   {
     titulo: "Sustitución de lunas",
     descripcion:
-      "Cambio de parabrisas y lunas laterales o traseras. Homologación incluida. Trabajamos con las principales aseguradoras.",
+      "Parabrisas roto, luna lateral dañada. Te lo reemplazamos homologado y gestionamos el trámite con tu asegurador. Sin sorpresas.",
     icono: "glass",
   },
   {
     titulo: "Restauración de faros",
     descripcion:
-      "Devolvemos la claridad y seguridad a tus faros: pulido profesional que elimina el amarilleamiento y mejora visibilidad nocturna.",
+      "Esos faros amarillentos que ves cada mañana. Los restauramos a su claridad original sin cambiarlos. Mejor visión, sin gasto innecesario.",
     icono: "light",
   },
   {
     titulo: "Pulido de carrocería",
     descripcion:
-      "Tratamiento de brillo para eliminar microarañazos y oxidaciones superficiales. Tu coche recupera el aspecto de showroom.",
+      "Microarañazos invisibles que acumulan años de uso. Un pulido profesional y tu coche brilla como recién salido de fábrica.",
     icono: "polish",
   },
 ];
@@ -49,25 +49,25 @@ export const porQueElegirnos = [
   {
     titulo: "Resultado impecable",
     descripcion:
-      "Cada trabajo sale de nuestro taller con el estándar de calidad más exigente. Si no queda perfecto, no queda.",
+      "Te mostramos el presupuesto real antes de empezar. Lo que ves es lo que pagas. Sin regateos después.",
     icono: "⭐",
   },
   {
-    titulo: "Atención personalizada",
+    titulo: "Sin sorpresas",
     descripcion:
-      "Te explicamos el estado real de tu vehículo y el presupuesto antes de empezar. Sin sorpresas, sin letra pequeña.",
+      "Te explicamos qué tiene el coche y cuánto cuesta antes de tocar nada. Si descubrimos algo más durante el trabajo, te llamamos.",
     icono: "🤝",
   },
   {
-    titulo: "Cumplimiento de plazos",
+    titulo: "Entrega a tiempo",
     descripcion:
-      "Valoramos tu tiempo. Fijamos una fecha de entrega realista y la cumplimos.",
+      "Nos comprometemos con una fecha y la cumplimos. Tu coche listo cuando prometemos.",
     icono: "📅",
   },
   {
-    titulo: "Valoración 5,0 en Google",
+    titulo: "54 clientes lo confirman",
     descripcion:
-      "54 clientes nos han valorado con la máxima puntuación. Su confianza es nuestra mejor garantía.",
+      "5,0 estrellas en Google. No es suerte. Es consistencia.",
     icono: "🏆",
   },
 ];
@@ -98,22 +98,22 @@ export const resenas = [
 export const trabajos = [
   {
     id: 1,
-    titulo: "Reparación de chapa lateral",
-    descripcion: "Golpe en puerta trasera",
+    titulo: "Golpe en puerta trasera",
+    descripcion: "De irreparable a impecable",
   },
   {
     id: 2,
-    titulo: "Retoque de pintura capó",
-    descripcion: "Oxidación superficial eliminada",
+    titulo: "Óxido en capó",
+    descripcion: "Eliminado sin repintar",
   },
   {
     id: 3,
-    titulo: "Restauración de faros",
-    descripcion: "Faros amarillentos devueltos a su estado original",
+    titulo: "Faros amarillos",
+    descripcion: "Recuperada la claridad",
   },
   {
     id: 4,
-    titulo: "Pulido completo de carrocería",
-    descripcion: "Microarañazos eliminados, brillo restaurado",
+    titulo: "Arañazos acumulados",
+    descripcion: "Carrocería como nueva",
   },
 ];

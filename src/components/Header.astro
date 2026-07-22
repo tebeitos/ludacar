@@ -15,9 +15,6 @@ import { negocio } from "../data/negocio";
       <a href="/#contacto">Contacto</a>
     </nav>
 
-    <a class="boton boton-primario nav-cta" href={`tel:${negocio.telefonoLink}`}>
-      📞 Llamar
-    </a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
       <span class="bar"></span>
@@ -147,12 +144,6 @@ import { negocio } from "../data/negocio";
     background-color: var(--rojo);
   }
 
-  .nav-cta {
-    display: none;
-    font-size: 0.88rem;
-    padding: 0.6rem 1.25rem;
-    flex-shrink: 0;
-  }
 
   /* Hamburger */
   .menu-toggle {
@@ -253,9 +244,6 @@ import { negocio } from "../data/negocio";
       display: flex;
     }
 
-    .nav-cta {
-      display: inline-flex;
-    }
 
     .logo-img {
       height: 80px;
