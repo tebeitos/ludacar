@@ -45,12 +45,6 @@ import { negocio } from "../data/negocio";
     </div>
   </div>
 
-  <!-- Elemento decorativo: coche abstracto -->
-  <div class="hero-deco" aria-hidden="true">
-    <div class="deco-stripe deco-stripe-1"></div>
-    <div class="deco-stripe deco-stripe-2"></div>
-    <div class="deco-stripe deco-stripe-3"></div>
-  </div>
 </section>
 
 <style>
@@ -199,46 +193,5 @@ import { negocio } from "../data/negocio";
     flex-wrap: wrap;
   }
 
-  /* Decoración lateral de rayas (referencia automóvil) */
-  .hero-deco {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 35%;
-    z-index: 1;
-    display: none;
-  }
 
-  .deco-stripe {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    border-radius: 999px 0 0 999px;
-    opacity: 0.06;
-  }
-
-  .deco-stripe-1 {
-    width: 120px;
-    background: var(--amarillo);
-    right: 60px;
-  }
-
-  .deco-stripe-2 {
-    width: 80px;
-    background: var(--rojo);
-    right: 0px;
-  }
-
-  .deco-stripe-3 {
-    width: 40px;
-    background: var(--blanco);
-    right: -20px;
-  }
-
-  @media (min-width: 900px) {
-    .hero-deco {
-      display: block;
-    }
-  }
 </style>
