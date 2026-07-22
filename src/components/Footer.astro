@@ -66,9 +66,8 @@ import { negocio } from "../data/negocio";
   </div>
 
   <div class="footer-bottom">
-    <div class="contenedor footer-bottom-flex">
-      <p>&copy; {new Date().getFullYear()} {negocio.nombre}. Todos los derechos reservados.</p>
-      <p class="firma-taller">Taller de chapa y pintura en Gijón.</p>
+    <div class="contenedor" style="text-align: center;">
+      <p>2026 Ludacar</p>
     </div>
   </div>
 </footer>
@@ -208,22 +207,5 @@ import { negocio } from "../data/negocio";
     color: rgba(255, 255, 255, 0.4);
   }
 
-  .footer-bottom-flex {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
 
-  @media (min-width: 768px) {
-    .footer-bottom-flex {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-    }
-  }
-
-  .firma-taller {
-    font-weight: 500;
-  }
 </style>
