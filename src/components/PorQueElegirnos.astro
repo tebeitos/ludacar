@@ -1,0 +1,99 @@
+---
+import { porQueElegirnos } from "../data/negocio";
+---
+
+<section id="por-que" class="porque">
+  <div class="contenedor">
+    <p class="eyebrow-claro">Por qué elegirnos</p>
+    <h2 class="porque-titulo">La diferencia está<br />en los detalles</h2>
+
+    <div class="porque-grid">
+      {
+        porQueElegirnos.map((item) => (
+          <div class="porque-card">
+            <span class="porque-icono" aria-hidden="true">
+              {item.icono}
+            </span>
+            <h3>{item.titulo}</h3>
+            <p>{item.descripcion}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .porque {
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .porque::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rojo), var(--amarillo), var(--rojo));
+  }
+
+  .porque-titulo {
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    color: var(--blanco);
+    margin: 0.75rem 0 3rem;
+  }
+
+  .porque-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 600px) {
+    .porque-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .porque-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .porque-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .porque-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(245, 197, 24, 0.3);
+  }
+
+  .porque-icono {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .porque-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--amarillo);
+    margin-bottom: 0.6rem;
+  }
+
+  .porque-card p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+</style>

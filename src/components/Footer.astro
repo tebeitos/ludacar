@@ -1,0 +1,225 @@
+---
+import { negocio } from "../data/negocio";
+---
+
+<footer class="footer">
+  <div class="contenedor footer-grid">
+    <!-- Brand -->
+    <div class="footer-marca">
+      <a href="/#inicio" class="footer-logo">
+        <img src="/logo.jpg" alt="Ludacar" class="footer-logo-img" width="160" height="65" />
+      </a>
+      <p class="footer-eslogan">{negocio.eslogan}</p>
+      <div class="footer-reviews-badge">
+        <span>⭐</span>
+        <span
+          ><strong>{negocio.rating}</strong> / 5 ({negocio.numResenas} reseñas en
+          Google)</span
+        >
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <ul class="footer-links">
+        <li>
+          <span class="icon">📍</span>
+          <a href="/#contacto"
+            >{negocio.direccion}, {negocio.codigoPostal} {negocio.ciudad}</a
+          >
+        </li>
+        <li>
+          <span class="icon">📞</span>
+          <a href={`tel:${negocio.telefonoLink}`}>{negocio.telefono}</a>
+        </li>
+        <li>
+          <span class="icon">💬</span>
+          <a
+            href={`https://wa.me/${negocio.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer">WhatsApp</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Horario -->
+    <div class="footer-col">
+      <h3>Horario</h3>
+      <p class="footer-horario">{negocio.horario}</p>
+      <p class="footer-horario-sub">Sábados y domingos: Cerrado</p>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-col">
+      <h3>Información</h3>
+      <ul class="footer-links">
+        <li><a href="/aviso-legal">Aviso legal</a></li>
+        <li><a href="/privacidad">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="contenedor footer-bottom-flex">
+      <p>&copy; {new Date().getFullYear()} {negocio.nombre}. Todos los derechos reservados.</p>
+      <p class="firma-taller">Taller de chapa y pintura en Gijón.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border-top: 4px solid var(--amarillo);
+    padding: 4rem 1.5rem 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 500px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    }
+  }
+
+  .footer-marca {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer-logo-img {
+    height: 52px;
+    width: auto;
+    background: white;
+    border-radius: 8px;
+    padding: 4px 10px;
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-logo-img:hover {
+    opacity: 0.9;
+  }
+
+  .footer-eslogan {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.95rem;
+    max-width: 30ch;
+    line-height: 1.5;
+  }
+
+  .footer-reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(245, 197, 24, 0.2);
+    font-size: 0.85rem;
+    width: fit-content;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .footer-col h3 {
+    font-size: 0.8rem;
+    color: var(--amarillo);
+    margin-bottom: 1.25rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.93rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.4;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--amarillo);
+    text-decoration: underline;
+  }
+
+  .footer-horario {
+    font-size: 0.93rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .footer-horario-sub {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem 0;
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-bottom-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom-flex {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .firma-taller {
+    font-weight: 500;
+  }
+</style>

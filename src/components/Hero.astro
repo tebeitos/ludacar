@@ -1,0 +1,244 @@
+---
+import { negocio } from "../data/negocio";
+---
+
+<section class="hero" id="inicio">
+  <!-- Fondo decorativo -->
+  <div class="hero-fondo" aria-hidden="true">
+    <div class="hero-diagonal"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+  </div>
+
+  <div class="contenedor hero-contenido">
+    <p class="eyebrow-claro hero-eyebrow">Taller de chapa y pintura · Gijón</p>
+
+    <h1 class="hero-titulo">
+      Tu coche,<br />
+      <span class="titulo-rojo">perfecto</span><br />
+      de nuevo
+    </h1>
+
+    <p class="hero-subtitulo">
+      Restauración de chapa y pintura, sustitución de lunas, restauración de
+      faros y pulido de carrocería. Valorados con <strong>5,0 ⭐ en Google</strong>.
+    </p>
+
+    <div class="hero-badges">
+      <span class="badge">⭐ 5,0/5 Google</span>
+      <span class="badge">📍 Gijón</span>
+      <span class="badge">🏆 54 reseñas</span>
+    </div>
+
+    <div class="hero-botones">
+      <a class="boton boton-primario" href={`tel:${negocio.telefonoLink}`}>
+        📞 Llamar ahora
+      </a>
+      <a
+        class="boton boton-borde"
+        href={`https://wa.me/${negocio.whatsapp}?text=${encodeURIComponent("Hola, quería pedir información / presupuesto")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Elemento decorativo: coche abstracto -->
+  <div class="hero-deco" aria-hidden="true">
+    <div class="deco-stripe deco-stripe-1"></div>
+    <div class="deco-stripe deco-stripe-2"></div>
+    <div class="deco-stripe deco-stripe-3"></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 1.5rem 4rem;
+    background: var(--azul);
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      min-height: 90vh;
+      padding: 80px 3rem 6rem;
+    }
+  }
+
+  /* Fondo con patrón diagonal sutil */
+  .hero-fondo {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      145deg,
+      var(--azul-oscuro) 0%,
+      var(--azul) 50%,
+      var(--azul-medio) 100%
+    );
+  }
+
+  .hero-diagonal {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      135deg,
+      transparent 0px,
+      transparent 40px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(255, 255, 255, 0.02) 80px
+    );
+  }
+
+  .hero-glow-1 {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 50%;
+    height: 60%;
+    background: var(--amarillo);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.07;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 40%;
+    height: 50%;
+    background: var(--rojo);
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.09;
+  }
+
+  /* Contenido */
+  .hero-contenido {
+    position: relative;
+    z-index: 2;
+    color: var(--blanco);
+    max-width: 640px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .hero-titulo {
+    font-size: clamp(3rem, 11vw, 6rem);
+    font-weight: 800;
+    color: var(--blanco);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .titulo-rojo {
+    color: var(--rojo);
+    display: inline-block;
+    position: relative;
+  }
+
+  /* Línea decorativa bajo "perfecto" */
+  .titulo-rojo::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--amarillo);
+    border-radius: 2px;
+  }
+
+  .hero-subtitulo {
+    margin-top: 1.75rem;
+    max-width: 44ch;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  .hero-subtitulo strong {
+    color: var(--amarillo);
+  }
+
+  /* Badges / pills */
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-botones {
+    margin-top: 2.25rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Decoración lateral de rayas (referencia automóvil) */
+  .hero-deco {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 35%;
+    z-index: 1;
+    display: none;
+  }
+
+  .deco-stripe {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    border-radius: 999px 0 0 999px;
+    opacity: 0.06;
+  }
+
+  .deco-stripe-1 {
+    width: 120px;
+    background: var(--amarillo);
+    right: 60px;
+  }
+
+  .deco-stripe-2 {
+    width: 80px;
+    background: var(--rojo);
+    right: 0px;
+  }
+
+  .deco-stripe-3 {
+    width: 40px;
+    background: var(--blanco);
+    right: -20px;
+  }
+
+  @media (min-width: 900px) {
+    .hero-deco {
+      display: block;
+    }
+  }
+</style>

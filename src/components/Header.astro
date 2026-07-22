@@ -1,0 +1,268 @@
+---
+import { negocio } from "../data/negocio";
+---
+
+<header class="header" id="header">
+  <div class="contenedor header-contenedor">
+    <a href="/#inicio" class="logo-link">
+      <img src="/logo.jpg" alt="Ludacar — Taller de chapa y pintura en Gijón" class="logo-img" width="200" height="80" />
+    </a>
+
+    <nav class="nav">
+      <a href="/#servicios">Servicios</a>
+      <a href="/#trabajos">Antes/Después</a>
+      <a href="/#resenas">Reseñas</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+
+    <a class="boton boton-primario nav-cta" href={`tel:${negocio.telefonoLink}`}>
+      📞 Llamar
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#servicios" class="mobile-link">Servicios</a>
+    <a href="/#trabajos" class="mobile-link">Antes/Después</a>
+    <a href="/#resenas" class="mobile-link">Reseñas</a>
+    <a href="/#contacto" class="mobile-link">Contacto</a>
+    <a href={`tel:${negocio.telefonoLink}`} class="boton boton-primario mobile-btn">
+      📞 {negocio.telefono}
+    </a>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+      });
+    });
+  }
+
+  // Header scroll effect
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(26, 43, 92, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .header.scrolled {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 20px rgba(26, 43, 92, 0.12);
+  }
+
+  .header-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 68px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .logo-link:hover .logo-img {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+
+  .nav {
+    display: none;
+    gap: 1.75rem;
+  }
+
+  .nav a {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.93rem;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--azul);
+    transition: width 0.25s ease;
+  }
+
+  .nav a:hover {
+    color: var(--rojo);
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+    background-color: var(--rojo);
+  }
+
+  .nav-cta {
+    display: none;
+    font-size: 0.88rem;
+    padding: 0.6rem 1.25rem;
+    flex-shrink: 0;
+  }
+
+  /* Hamburger */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+
+  .menu-toggle .bar {
+    width: 26px;
+    height: 2.5px;
+    background-color: var(--azul);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8.75px) rotate(45deg);
+    background-color: var(--rojo);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8.75px) rotate(-45deg);
+    background-color: var(--rojo);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 84px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 84px);
+    background: var(--azul-oscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 99;
+  }
+
+  .mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--amarillo);
+  }
+
+  .mobile-btn {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+    font-size: 1.1rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .header-contenedor {
+      height: 96px;
+      padding: 0 1.5rem;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+    }
+
+    .logo-img {
+      height: 80px;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+  }
+</style>

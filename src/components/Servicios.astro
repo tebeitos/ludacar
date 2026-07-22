@@ -1,0 +1,126 @@
+---
+import { servicios } from "../data/negocio";
+
+const iconos: Record<string, string> = {
+  car: "🔧",
+  glass: "🪟",
+  light: "💡",
+  polish: "✨",
+};
+---
+
+<section id="servicios" class="servicios">
+  <div class="contenedor">
+    <p class="eyebrow-claro">Qué hacemos</p>
+    <h2 class="servicios-titulo">Nuestros servicios</h2>
+    <p class="servicios-sub">
+      Especialistas en la reparación y restauración de la carrocería del
+      automóvil. Resultados de taller de concesionario.
+    </p>
+
+    <div class="servicios-grid">
+      {
+        servicios.map((s) => (
+          <div class="servicio-card">
+            <span class="servicio-icono" aria-hidden="true">
+              {iconos[s.icono]}
+            </span>
+            <h3>{s.titulo}</h3>
+            <p>{s.descripcion}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .servicios {
+    background: var(--azul);
+    color: var(--blanco);
+  }
+
+  .servicios-titulo {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: var(--blanco);
+    margin: 0.75rem 0 1rem;
+  }
+
+  .servicios-sub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 52ch;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .servicios-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 600px) {
+    .servicios-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .servicios-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .servicio-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(245, 197, 24, 0.2);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .servicio-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amarillo), var(--rojo));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .servicio-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(245, 197, 24, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .servicio-card:hover::before {
+    opacity: 1;
+  }
+
+  .servicio-icono {
+    font-size: 2.25rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .servicio-card h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--amarillo);
+  }
+
+  .servicio-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+</style>

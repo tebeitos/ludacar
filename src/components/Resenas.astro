@@ -1,0 +1,140 @@
+---
+import { negocio, resenas } from "../data/negocio";
+---
+
+<section id="resenas" class="resenas">
+  <div class="contenedor">
+    <p class="eyebrow">Lo que dicen nuestros clientes</p>
+    <div class="resenas-cabecera">
+      <div class="rating-display">
+        <span class="rating-numero">{negocio.rating}</span>
+        <div class="rating-info">
+          <div class="estrellas" aria-label="5 estrellas">⭐⭐⭐⭐⭐</div>
+          <p class="rating-sub">
+            {negocio.numResenas} opiniones en Google ·
+            <a
+              href={negocio.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="resenas-link"
+            >
+              Ver todas
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="resenas-grid">
+      {
+        resenas.map((r) => (
+          <blockquote class="resena-card">
+            <div class="resena-estrellas" aria-hidden="true">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p>"{r.texto}"</p>
+            <footer>— {r.autor}</footer>
+          </blockquote>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .resenas {
+    background: var(--blanco);
+  }
+
+  .resenas-cabecera {
+    margin: 1rem 0 2.75rem;
+  }
+
+  .rating-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--gris-claro);
+    border: 2px solid var(--gris-borde);
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+  }
+
+  .rating-numero {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--azul);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .estrellas {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .rating-sub {
+    font-size: 0.9rem;
+    color: var(--gris-texto);
+  }
+
+  .resenas-link {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--amarillo-oscuro);
+    text-underline-offset: 3px;
+    color: var(--azul);
+    transition: color 0.2s ease;
+  }
+
+  .resenas-link:hover {
+    color: var(--rojo);
+  }
+
+  .resenas-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 700px) {
+    .resenas-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .resena-card {
+    margin: 0;
+    background: var(--gris-claro);
+    border-left: 4px solid var(--azul);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .resena-card:hover {
+    border-color: var(--rojo);
+    transform: translateX(4px);
+  }
+
+  .resena-estrellas {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .resena-card p {
+    font-size: 1rem;
+    color: var(--azul);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .resena-card footer {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gris-texto);
+    font-style: normal;
+  }
+</style>

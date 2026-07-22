@@ -1,0 +1,155 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { negocio } from "../data/negocio";
+---
+
+<Layout
+  title="Política de Privacidad — Ludacar"
+  description="Consulta la política de privacidad de Ludacar conforme al RGPD sobre la recogida, finalidad y derechos de tus datos de contacto."
+>
+  <section class="legal-section">
+    <div class="contenedor legal-contenedor">
+      <a href="/" class="volver-link">← Volver al inicio</a>
+
+      <h1>Política de Privacidad</h1>
+
+      <div class="legal-contenido">
+        <p>
+          En <strong>{negocio.nombre}</strong> garantizamos la protección y
+          confidencialidad de los datos personales que nos proporcionen nuestros
+          clientes, en conformidad con el Reglamento General de Protección de
+          Datos (RGPD) (UE) 2016/679 y la Ley Orgánica 3/2018 (LOPDGDD).
+        </p>
+
+        <h2>1. Responsable del Tratamiento</h2>
+        <ul>
+          <li><strong>Identidad:</strong> {negocio.nombre}</li>
+          <li>
+            <strong>Dirección Postal:</strong>
+            {negocio.direccion}, {negocio.codigoPostal} {negocio.ciudad}, Asturias
+          </li>
+          <li>
+            <strong>Contacto para Privacidad:</strong>
+            {negocio.telefono} (vía telefónica o WhatsApp)
+          </li>
+        </ul>
+
+        <h2>2. Finalidad del Tratamiento de Datos</h2>
+        <p>Tratamos los datos que nos facilitas para las siguientes finalidades:</p>
+        <ol>
+          <li>
+            Gestionar y responder a tus consultas de presupuesto realizadas
+            mediante llamada, WhatsApp o visita física al taller.
+          </li>
+          <li>
+            Prestar el servicio contratado de reparación de vehículos,
+            facturación y comunicación sobre la entrega del vehículo.
+          </li>
+        </ol>
+        <p>
+          No utilizaremos tus datos para enviar boletines de publicidad de forma
+          masiva o no solicitada.
+        </p>
+
+        <h2>3. Legitimación del Tratamiento</h2>
+        <p>
+          La base legal para el tratamiento de tus datos es la ejecución del
+          contrato de prestación de servicios de taller o bien tu consentimiento
+          expreso al contactarnos para solicitar información sobre precios o
+          trabajos de chapa y pintura.
+        </p>
+
+        <h2>4. Conservación de los Datos</h2>
+        <p>
+          Los datos personales proporcionados se conservarán durante el tiempo
+          necesario para la prestación del servicio o mientras exista una
+          relación comercial activa, y posteriormente durante los plazos
+          legalmente exigidos por las normativas fiscales y de consumo
+          aplicables.
+        </p>
+
+        <h2>5. Destinatarios</h2>
+        <p>
+          Tus datos no se cederán a terceros, salvo obligación legal expresa o
+          cuando sea necesario para la propia prestación del servicio (por
+          ejemplo, comunicación con peritos de seguros o empresas de suministro
+          de materiales específicos).
+        </p>
+
+        <h2>6. Derechos del Usuario</h2>
+        <p>
+          Tienes derecho a acceder a tus datos personales, así como a solicitar
+          la rectificación de los datos inexactos o, en su caso, solicitar su
+          supresión cuando los datos ya no sean necesarios para los fines para
+          los que fueron recogidos. Para ejercer estos derechos, puedes ponerte
+          en contacto con nosotros directamente llamándonos al {negocio.telefono}
+          o acudiendo a nuestro taller.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-section {
+    padding: 6rem 1.5rem;
+    background: var(--blanco);
+    min-height: 80vh;
+  }
+
+  .legal-contenedor {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .volver-link {
+    display: inline-block;
+    color: var(--gris-texto);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .volver-link:hover {
+    color: var(--azul);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    margin-bottom: 2rem;
+    color: var(--azul);
+    border-bottom: 4px solid var(--amarillo);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-contenido h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--azul);
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .legal-contenido p,
+  .legal-contenido ul,
+  .legal-contenido ol {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--gris-texto);
+    margin-bottom: 1rem;
+  }
+
+  .legal-contenido ul,
+  .legal-contenido ol {
+    padding-left: 1.5rem;
+  }
+
+  .legal-contenido li {
+    margin-bottom: 0.5rem;
+  }
+</style>
