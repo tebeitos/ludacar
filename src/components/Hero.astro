@@ -25,9 +25,23 @@ import { negocio } from "../data/negocio";
     </p>
 
     <div class="hero-badges">
-      <span class="badge">⭐ 5,0/5 Google</span>
+      <a
+        class="badge badge-link"
+        href={negocio.googleReviewsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ⭐ 5,0/5 Google
+      </a>
       <span class="badge">📍 Gijón</span>
-      <span class="badge">🏆 54 reseñas</span>
+      <a
+        class="badge badge-link"
+        href={negocio.googleReviewsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🏆 54 reseñas
+      </a>
     </div>
 
     <div class="hero-botones">
@@ -195,6 +209,17 @@ import { negocio } from "../data/negocio";
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(8px);
+  }
+
+  .badge-link {
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .badge-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--blanco);
   }
 
   .hero-botones {
