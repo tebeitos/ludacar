@@ -1,16 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Fondo azul marino -->
-  <rect width="100" height="100" rx="20" fill="#1A2B5C"/>
-  <!-- Letra L en amarillo -->
-  <text
-    x="50"
-    y="72"
-    text-anchor="middle"
-    font-family="Georgia, serif"
-    font-size="68"
-    font-weight="bold"
-    fill="#F5C518"
-  >L</text>
-  <!-- Detalle rojo - línea inferior -->
-  <rect x="20" y="82" width="60" height="5" rx="2.5" fill="#D62828"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Fondo blanco redondeado para contraste e integración -->
+  <rect width="128" height="128" rx="28" fill="#FFFFFF"/>
+  <rect x="2" y="2" width="124" height="124" rx="26" stroke="#1A2B5C" stroke-width="4" opacity="0.1"/>
+
+  <!-- Silueta de coche en azul marino, adaptada del logo -->
+  <path
+    d="M18 78 C25 65 42 60 58 60 C65 60 75 42 90 42 C102 42 108 65 108 78"
+    stroke="#1A2B5C"
+    stroke-width="7"
+    stroke-linecap="round"
+  />
+
+  <!-- Pistola de pintura en amarillo, adaptada del logo -->
+  <!-- Depósito de pintura -->
+  <path d="M96 26 L108 30 L102 44 L90 40 Z" fill="#F5C518"/>
+  <!-- Cuerpo de la pistola -->
+  <path d="M88 42 L100 46 L96 52 L90 50 Z" fill="#F5C518"/>
+  <!-- Boquilla y mango -->
+  <path
+    d="M88 46 L82 48 L80 44 M94 48 L90 60 L86 58"
+    stroke="#F5C518"
+    stroke-width="4.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Línea de base en rojo para el acento final -->
+  <path
+    d="M20 88 L108 88"
+    stroke="#D62828"
+    stroke-width="5.5"
+    stroke-linecap="round"
+  />
 </svg>
