@@ -28,9 +28,6 @@ import { negocio } from "../data/negocio";
     <a href="/#trabajos" class="mobile-link">Antes/Después</a>
     <a href="/#resenas" class="mobile-link">Reseñas</a>
     <a href="/#contacto" class="mobile-link">Contacto</a>
-    <a href={`tel:${negocio.telefonoLink}`} class="boton boton-primario mobile-btn">
-      📞 {negocio.telefono}
-    </a>
   </div>
 </header>
 
@@ -221,13 +218,6 @@ import { negocio } from "../data/negocio";
     color: var(--amarillo);
   }
 
-  .mobile-btn {
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 260px;
-    justify-content: center;
-    font-size: 1.1rem !important;
-  }
 
   @media (min-width: 768px) {
     .header-contenedor {
